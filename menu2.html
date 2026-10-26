@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head><title> menu2 page </title></head>
+    <head><title> menu2 page </title>
+        <script>
+            function query() {
+                var ret =confirm("네이버로 이동하시겠습니까?");
+                return ret; // confirm()의 리턴 값은 true 또는 false
+            }
+            function noAction(e) {
+                event.preventDefault(); // 이벤트의 디폴트 행동 강제 취소
+            }
+        </script>
+    </head>
     <body bgcolor="yellow">
         menu2 page<br>
         <a href="http://www.naver.com" onclick="return query()">
@@ -12,8 +22,8 @@
         </form> <hr>
         <form>
             성별 : 
-            <input type="radio" value="남" id="sex"> 남 
-            <input type="radio" value="여" id="sex"> 여 <br>
+            <input type="radio" value="남"> 남 
+            <input type="radio" value="여"> 여 <br>
         </form>
     </body>
 </html>
