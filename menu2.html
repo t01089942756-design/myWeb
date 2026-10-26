@@ -2,6 +2,14 @@
 <html>
     <head><title> menu2 page </title>
         <script>
+            var sum = 0; // 전역변수 선언
+            function calc(cBox){
+                if(cBox.checked)
+                    sum += parseInt(cBox.value); 
+                else 
+                    sum -= parseInt(cBox.value); 
+                document.getElementById("sumtext").value = sum;
+            }
             function query() {
                 var ret =confirm("네이버로 이동하시겠습니까?");
                 return ret; // confirm()의 리턴 값은 true 또는 false
@@ -13,7 +21,7 @@
         </script>
     </head>
     <body bgcolor="yellow">
-        menu2 page<br>
+        menu2 page - 2435027 호세영<br>
         <a href="http://www.naver.com" onclick="return query()">
             네이버로 이동할 지 물어보는 링크</a><br>
         <hr>
@@ -23,8 +31,18 @@
         </form> <hr>
         <form>
             성별 : 
-            <input type="radio" value="남"> 남 
-            <input type="radio" value="여"> 여 <br>
+            <input type="radio" value="남" id="sex"> 남 
+            <input type="radio" value="여" id="sex"> 여 <br>
+        </form> <br>
+        <hr>
+        구매 물품 선택 <br>
+        <form> <input type="checkbox" name="hap" value="10000" 
+            onclick="calc(this)">모자 1만원
+            <input type="checkbox" name="shose" value="30000" 
+            onclick="calc(this)">구두 3만원
+            <input type="checkbox" name="bag" value="80000" o
+            nclick="calc(this)">명품가방 8만원<br>지불하실금액
+            <input type="text" id="sumtext" value="0" > 
         </form>
     </body>
 </html>
